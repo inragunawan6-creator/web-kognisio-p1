@@ -4,12 +4,13 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } f
 
 // 2. CONFIGURATION
 const firebaseConfig = {
-  apiKey: "AIzaSyA1...", // Ganti dengan milikmu
-  authDomain: "kogniscio-app.firebaseapp.com",
-  projectId: "kogniscio-app",
-  storageBucket: "kogniscio-app.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456:web:abcde12345"
+  apiKey: "AIzaSyDY-tzijy0z5yfD_U7dn0YHXXh5NLXOHJ8",
+  authDomain: "kogniscio.firebaseapp.com",
+  projectId: "kogniscio",
+  storageBucket: "kogniscio.firebasestorage.app",
+  messagingSenderId: "146030907751",
+  appId: "1:146030907751:web:a646d0786595bafe819fc2",
+  measurementId: "G-G7JBCHP9VE"
 };
 
 // 3. INITIALIZE
