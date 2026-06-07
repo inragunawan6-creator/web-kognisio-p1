@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #0f172a;
+  color: white;
+  min-height: 100vh; /* Ganti height menjadi min-height agar lebih fleksibel */
+  /* Hapus atau komentari overflow: hidden agar halaman bisa di-scroll jika darurat */
+}
+
+.welcome-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  height: 100vh;
+}
+
+/* SISI KANAN: FORM LOGIN */
+.login-side {
+  background-color: #ffffff;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  overflow-y: auto; /* JIKA form terlalu panjang, hanya area login ini yang bisa di-scroll */
+}
+
+.mini-features {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Tambahkan ini agar fitur mini otomatis turun ke bawah jika layar menyempit */
+}
+
+/* SISI KIRI: INTRO */
+.intro-side {
+  background: radial-gradient(circle at top left, #6c63ff, transparent 50%),
+    radial-gradient(circle at bottom right, #00c2ff, transparent 50%),
+    #0f172a;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  position: relative;
+}
+
+.intro-content {
+  max-width: 600px;
+}
+
+.welcome-logo {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffd700;
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+}
+
+.intro-side h1 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #ffffff, #8ab4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.intro-side p {
+  font-size: 18px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.mini-features {
+  display: flex;
+  gap: 20px;
+}
+
+.feat-item {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feat-item i {
+  color: #7692ff;
+  margin-right: 8px;
+}
+
+/* SISI KANAN: FORM LOGIN */
+.login-side {
+  background-color: #ffffff;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 16px;
+  color: #94a3b8;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 14px 16px 14px 45px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-wrapper input:focus {
+  border-color: #7692ff;
+  box-shadow: 0 0 0 4px rgba(118, 146, 255, 0.15);
+}
+
+.btn-login {
+  width: 100%;
+  padding: 16px;
+  background-color: #7692ff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-login:hover {
+  background-color: #5a73d1;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.login-footer a {
+  color: #7692ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.toggle-password{
+  position:absolute;
+  right:15px;
+  cursor:pointer;
+  color:#94a3b8;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 900px) {
+  .welcome-container {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-side {
+    display: none;
+    /* Sembunyikan perkenalan di HP agar fokus login */
+  }
+
+  .login-side {
+    background-color: #0f172a;
+    color: white;
+  }
+
+  .login-box h2 {
+    color: white;
+  }
+
+  .subtitle {
+    color: #94a3b8;
+  }
+
+  .input-group label {
+    color: #cbd5e1;
+  }
+
+  .input-wrapper input {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: white;
+  }
+}
+
+.login-box, .intro-content {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
