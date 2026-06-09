@@ -8,8 +8,7 @@
 body {
   background-color: #0f172a;
   color: white;
-  min-height: 100vh; /* Ganti height menjadi min-height agar lebih fleksibel */
-  /* Hapus atau komentari overflow: hidden agar halaman bisa di-scroll jika darurat */
+  min-height: 100vh;
 }
 
 .welcome-container {
@@ -18,28 +17,11 @@ body {
   height: 100vh;
 }
 
-/* SISI KANAN: FORM LOGIN */
-.login-side {
-  background-color: #ffffff;
-  color: #333333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  overflow-y: auto; /* JIKA form terlalu panjang, hanya area login ini yang bisa di-scroll */
-}
-
-.mini-features {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap; /* Tambahkan ini agar fitur mini otomatis turun ke bawah jika layar menyempit */
-}
-
 /* SISI KIRI: INTRO */
 .intro-side {
   background: radial-gradient(circle at top left, #6c63ff, transparent 50%),
-    radial-gradient(circle at bottom right, #00c2ff, transparent 50%),
-    #0f172a;
+              radial-gradient(circle at bottom right, #00c2ff, transparent 50%),
+              #0f172a;
   display: flex;
   align-items: center;
   padding: 0 10%;
@@ -78,6 +60,7 @@ body {
 .mini-features {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap; /* Digabung di sini */
 }
 
 .feat-item {
@@ -95,7 +78,7 @@ body {
   margin-right: 8px;
 }
 
-/* SISI KANAN: FORM LOGIN */
+/* SISI KANAN: FORM LOGIN (Disatukan & Dibersihkan) */
 .login-side {
   background-color: #ffffff;
   color: #333333;
@@ -103,6 +86,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 40px;
+  overflow-y: auto; 
 }
 
 .login-box {
@@ -162,6 +146,14 @@ body {
   box-shadow: 0 0 0 4px rgba(118, 146, 255, 0.15);
 }
 
+.toggle-password,
+.toggle-password-reg {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  color: #94a3b8;
+}
+
 .btn-login {
   width: 100%;
   padding: 16px;
@@ -197,13 +189,6 @@ body {
   font-weight: 600;
 }
 
-.toggle-password{
-  position:absolute;
-  right:15px;
-  cursor:pointer;
-  color:#94a3b8;
-}
-
 /* RESPONSIVE */
 @media screen and (max-width: 900px) {
   .welcome-container {
@@ -212,7 +197,6 @@ body {
 
   .intro-side {
     display: none;
-    /* Sembunyikan perkenalan di HP agar fokus login */
   }
 
   .login-side {
@@ -239,6 +223,7 @@ body {
   }
 }
 
+/* ANIMATIONS */
 .login-box, .intro-content {
   animation: fadeIn 1s ease-in-out;
 }
