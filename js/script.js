@@ -56,7 +56,7 @@ async function handleFileUpload() {
 */
 
 
-const ADMIN_EMAIL = "inragunawan6@gmail.com";
+const ADMIN_EMAIL = "solburnicarus@gmail.com";
 
 if (window.location.pathname.includes("dashboard.html")) {
   onAuthStateChanged(auth, (user) => {
