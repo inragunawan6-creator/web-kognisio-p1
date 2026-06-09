@@ -4,297 +4,422 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KOGNISCIO - Ruang Catatan & Video Kuliah</title>
+  <title>KOGNISCIO - Ruang Belajar & Komunitas Edukasi</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- HERO SECTION -->
-  <section id="home" class="page active-page hero">
+  <section id="home" class="page active-page feed-section">
+    <h2>📚 Catatan Terbaru</h2>
 
-    <div class="hero-content">
-      <h1>SELAMAT DATANG DI KOGNISCIO</h1>
+    <div id="latestMaterials" class="preview-carousel">
+    </div>
+
+    <h2 style="margin-top:30px;">🎥 Video Terbaru</h2>
+
+    <div id="latestVideos" class="preview-carousel">
+    </div>
+
+    <h2 style="margin-top:30px;">📢 Informasi Terbaru</h2>
+
+    <div id="feedContainer">
+    </div>
+
+  </section>
+
+  <section id="courses" class="page notes-gallery-section">
+    <div class="section-header">
+      <h2>Daftar Catatan Mata Pelajaran</h2>
+      <p>Kumpulan resume materi pokok, modul teori, dan dokumen literasi siap baca.</p>
+    </div>
+
+    <div id="materialsContainer" class="course-card-container">
+      <div class="course-card">
+        <div class="card-tag"><i class="fa-solid fa-book-bookmark"></i> Catatan</div>
+        <img src="assets/images/image1.jpeg" class="course-thumb" alt="Cover Catatan">
+        <div class="card-body">
+          <h3>Keterampilan Menyimak</h3>
+          <p class="course-desc">Resume komprehensif mengenai teknik menyimak aktif dan pemahaman informasi kritis.</p>
+          <a href="src/courses/Semester 1/Keterampilan Menyimak.html" class="course-btn">
+            <i class="fa-solid fa-bookmark"></i> Baca Catatan
+          </a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="card-tag"><i class="fa-solid fa-book-bookmark"></i> Catatan</div>
+        <img src="assets/images/image1.jpeg" class="course-thumb" alt="Cover Catatan">
+        <div class="card-body">
+          <h3>Linguistik Umum</h3>
+          <p class="course-desc">Dasar-dasar ilmu fonologi, morfologi, sintaksis, dan struktur utama bahasa modern.</p>
+          <a href="src/courses/Semester 1/Linguistik Umum.html" class="course-btn">
+            <i class="fa-solid fa-bookmark"></i> Baca Catatan
+          </a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="card-tag"><i class="fa-solid fa-book-bookmark"></i> Catatan</div>
+        <img src="assets/images/image1.jpeg" class="course-thumb" alt="Cover Catatan">
+        <div class="card-body">
+          <h3>Teori Sastra</h3>
+          <p class="course-desc">Pendekatan struktural, sosiologi sastra, dan metode analisis karya kreatif.</p>
+          <a href="src/courses/Semester 1/Teori Sastra.html" class="course-btn">
+            <i class="fa-solid fa-bookmark"></i> Baca Catatan
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="classroom" class="page classroom-video-section">
+    <div id="videosContainer">
+    </div>
+  </section>
+
+  <section id="profile" class="page profile-section">
+    <div class="profile-card-container">
+
+      <div class="profile-header-bg"></div>
+
+      <div class="profile-main-info">
+        <div class="profile-avatar-container">
+          <img src="assets/images/image1.jpeg" id="profileAvatar" class="large-profile-avatar"
+            alt="Foto Profil Pengguna">
+
+          <label for="avatarInput" class="edit-avatar-btn">
+            <i class="fa-solid fa-camera"></i>
+          </label>
+
+          <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+        </div>
+      </div>
+
+      <h2 id="profileName" class="profile-display-name"></h2>
+      <span id="profileEmail" class="detail-value"></span>
+      <p id="roleBadge" class="profile-role-badge">
+        <i class="fa-solid fa-user"></i> User
+      </p>
+      <div class="profile-bio-box">
+        <p>"Bergerak di bidang pendidikan bahasa, menyukai dunia kreatif menulis, world-building fiksi ilmiah, serta
+          perancangan media pembelajaran inovatif."</p>
+      </div>
+
+      <hr class="profile-divider" />
+
+      <div class="profile-details-grid">
+        <div class="detail-item">
+          <span class="detail-label"><i class="fa-solid fa-university"></i> Jurusan / Prodi</span>
+          <span class="detail-value">Pendidikan Bahasa Indonesia</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label"><i class="fa-solid fa-envelope"></i> Email Aktif</span>
+          <span class="detail-value">inra@kampus.com</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label"><i class="fa-solid fa-users-gear"></i> Divisi Organisasi</span>
+          <span class="detail-value">Minat dan Bakat (Himpunan Mahasiswa)</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label"><i class="fa-solid fa-calendar-check"></i> Anggota Sejak</span>
+          <span class="detail-value">Juni 2025</span>
+        </div>
+      </div>
+
+      <button id="logoutBtn" class="logout-btn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </button>
+
+    </div>
+  </section>
+
+  <!-- HOME -->
+  <section id="home" class="page active-page feed-section">
+
+    <div class="hero-home">
+
+      <h1>KOGNISCIO</h1>
+
       <p>
-        Komunitas edukasi multi-disiplin untuk berbagi catatan
-        dan video pembelajaran interaktif.
+        Platform belajar, berbagi materi,
+        dan pengembangan literasi digital.
       </p>
 
-      <div class="hero-buttons">
-        <a href="#" class="btn">Mulai Belajar</a>
-      </div>
     </div>
 
-    <div class="floating-card">
-      📚 120+ Materi Interaktif
+    <div class="section-header">
+      <h2>🔥 Konten Terbaru</h2>
+      <p>Materi, video pembelajaran, dan informasi terbaru.</p>
     </div>
+
+    <div id="feedContainer" class="feed-grid"></div>
 
   </section>
 
-  <!-- FITUR -->
-  <section class="home-features">
+  <!-- JELAJAH -->
+  <section id="explore" class="page">
 
-    <h2>Eksplorasi & Pembelajaran</h2>
-
-    <p>
-      Kami memadukan teks literasi akademis dengan media visual kreatif
-      untuk menciptakan pengalaman belajar yang jauh lebih taktis
-      dan mudah dipahami.
-    </p>
-
-    <div class="about-card-container">
-
-      <div class="about-card">
-        <i class="fa-solid fa-video"></i>
-        <h3>Videografi Bahasan</h3>
-        <p>
-          Penjelasan materi kuliah inti yang dikemas secara terstruktur,
-          visual, dan tidak membosankan.
-        </p>
-      </div>
-
-      <div class="about-card">
-        <i class="fa-solid fa-book-open"></i>
-        <h3>Catatan Terintegrasi</h3>
-        <p>
-          Resume perkuliahan materi pokok yang disusun rapi,
-          siap baca, dan dapat diunduh kapan saja.
-        </p>
-      </div>
-
-      <div class="about-card">
-        <i class="fa-solid fa-globe"></i>
-        <h3>Akses Terbuka</h3>
-        <p>
-          Dikembangkan menggunakan HTML & CSS modern
-          agar ringan diakses siapa saja.
-        </p>
-      </div>
-
+    <div class="section-header">
+      <h2>📚 Jelajah Materi</h2>
+      <p>Kumpulan materi pembelajaran.</p>
     </div>
+
+    <div id="materialsContainer" class="course-card-container"></div>
 
   </section>
 
-  <!-- COURSES SECTION (Transformasi dari Portfolio) -->
-  <section id="courses" class="page portfolio">
-    <h2>Daftar Mata Kuliah</h2>
-    <p style="margin-bottom: 40px; color: #555;">Pilih semester di bawah ini untuk melihat modul materi yang tersedia.
-    </p>
+  <!-- VIDEO -->
+  <section id="videos" class="page">
 
-    <div class="course-card-container">
-
-      <!-- CARD SEMESTER 1 -->
-      <div class="course-card">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <img src="assets/images/image1.jpeg" class="course-thumb">
-
-        <h3>Keterampilan Menyimak</h3>
-
-        <h4 class="course-desc">
-          Pelajari teknik menyimak aktif dan memahami informasi secara efektif.
-        </h4>
-
-        <a href="src/courses/Semester 1/Keterampilan Menyimak.html" class="course-btn">
-          Mulai Belajar
-        </a>
-      </div>
-
-      <div class="course-card">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <img src="assets/images/image1.jpeg" class="course-thumb">
-
-        <h3>Linguistik Umum</h3>
-
-        <h4 class="course-desc">
-          Memahami dasar-dasar ilmu bahasa dan struktur linguistik modern.
-        </h4>
-
-        <a href="src/courses/Semester 1/Linguistik Umum.html" class="course-btn">
-          Mulai Belajar
-        </a>
-      </div>
-
-      <div class="course-card">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <img src="assets/images/image1.jpeg" class="course-thumb">
-
-        <h3>Teori Sastra</h3>
-
-        <h4 class="course-desc">
-          Pelajari konsep, pendekatan, dan analisis dalam kajian sastra.
-        </h4>
-
-        <a href="src/courses/Semester 1/Teori Sastra.html" class="course-btn">
-          Mulai Belajar
-        </a>
-      </div>
-
-      <div class="course-card">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <img src="assets/images/image1.jpeg" class="course-thumb">
-
-        <h3>Psikologi Pendidikan</h3>
-
-        <h4 class="course-desc">
-          Memahami perilaku belajar dan perkembangan peserta didik.
-        </h4>
-
-        <a href="src/courses/Semester 1/Psikologi Pendidikan.html" class="course-btn">
-          Mulai Belajar
-        </a>
-      </div>
-
-      <div class="course-card">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <img src="assets/images/image1.jpeg" class="course-thumb">
-
-        <h3>Keterampilan Berbicara</h3>
-
-        <h4 class="course-desc">
-          Tingkatkan kemampuan komunikasi lisan secara efektif dan percaya diri.
-        </h4>
-
-        <a href="src/courses/Semester 1/Keterampilan Berbicara.html" class="course-btn">
-          Mulai Belajar
-        </a>
-      </div>
+    <div class="section-header">
+      <h2>🎥 Video Pembelajaran</h2>
+      <p>Koleksi video edukasi.</p>
     </div>
+
+    <div id="videosContainer"></div>
+
   </section>
 
-  <!-- CLASSROOM SECTION (FITUR UTAMA: SPLIT VIEW VIDEO & CATATAN) -->
-  <section id="classroom" class="page classroom">
-    <h2>Ruang Belajar Interaktif</h2>
-    <p class="classroom-subtitle">Mata Kuliah: <strong>Pengantar Linguistik Umum (Morfologi Dasar)</strong></p>
+  <!-- ADMIN PANEL -->
+  <section id="create" class="page create-section">
 
-    <div class="split-container">
-      <!-- SISI KIRI: VIDEO PEMBAHASAN -->
-      <div class="video-panel">
-        <div class="video-wrapper">
-          <!-- Ganti URL src dengan link embed video aslimu nanti -->
-          <iframe src="https://www.youtube.com/embed/xcvdMHnF-d8" title="Video Pembahasan" frameborder="0"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-timeline-shortcuts">
-          <h4><i class="fa-solid fa-clock"></i> Lompat ke Segmen Pembahasan:</h4>
-          <div class="shortcut-buttons">
-            <a href="#segmen-1" class="shortcut-tag">00:00 - Menghitung Kalimat Lengkap</a>
-            <a href="#segmen-2" class="shortcut-tag">01:00 - Menghitung Grafik Fry</a>
-            <a href="#segmen-3" class="shortcut-tag">05:26 - Menghitung Grafik Raygor</a>
+    <div class="admin-dashboard">
+
+      <!-- STATISTIK -->
+
+      <div class="dashboard-stats">
+
+        <div class="stat-card">
+          <i class="fa-solid fa-book"></i>
+
+          <div>
+            <h3 id="totalMaterials">0</h3>
+            <p>Materi</p>
           </div>
-        </div>
-      </div>
 
-      <!-- SISI KANAN: CATATAN KULIAH (BISA DISCROLL MANDIRI) -->
-      <div class="notes-panel">
-        <div class="notes-content">
-          <h3>Rangkuman Materi: Praktik Menghitung Grafik Fry Dan Raygor</h3>
-          <p>Metode Pengukuran Tingkat Keterbacaan Teks Bahasa Indonesia. Metode ini diawali dengan mengambil sampel
-            sebanyak <strong>100 kata pertama</strong> dari teks yang akan
-            diuji.</p>
-          <h4>1. Penghitungan Menggunakan Grafik Fry</h4>
-          <h4>Menghitung Jumlah Kalimat</h4>
-          <ul>
-            <li>Hitung semua kalimat lengkap di dalam sampel 100 kata.</li>
-            <li>Jika kalimat terakhir terpotong, hitung proporsinya dengan rumus:</li>
-          </ul>
-          <div class="formula-box">
-            <span class="math">Jumlah kalimat lengkap + (Jumlah kata yang masuk di kalimat terakhir / Keseluruhan kata
-              pada kalimat terakhir)</span>
+        </div>
+
+        <div class="stat-card">
+          <i class="fa-solid fa-video"></i>
+
+          <div>
+            <h3 id="totalVideos">0</h3>
+            <p>Video</p>
           </div>
-          <p><em>Contoh Kasus:</em> <span class="math">8 + (19 / 26) = 8.73</span> kalimat.</p>
-          <h4>Menghitung Jumlah Suku Kata (Silabel)</h4>
-          <ul>
-            <li>Hitung manual seluruh suku kata dari 100 kata tersebut (contoh: <span class="highlight">se-jak</span> =
-              2, <span class="highlight">ter-ja-di-nya</span> = 4).</li>
-            <li>Hasil total suku kata wajib dikalikan dengan <strong>angka konversi 0,6</strong> (rasio penyesuaian
-              dari bahasa Inggris ke bahasa Indonesia).</li>
-          </ul>
-          <p><em>Contoh Kasus:</em> <span class="math">262 &times; 0.6 = 157.2</span> suku kata.</p>
-          <h4>Menentukan Jenjang Kelas</h4>
-          <p>Petakan pertemuan garis vertikal (<span class="math">157.2</span>) dan horizontal (<span
-              class="math">8.73</span>) pada Grafik Fry. Contoh kasus ini jatuh pada <strong>jenjang kelas 9
-              SMP</strong>.</p>
-          <h4>2. Penghitungan Menggunakan Grafik Raygor</h4>
-          <h4>Menghitung Jumlah Kalimat</h4>
-          <p>Menggunakan prosedur hitung yang sama dengan grafik Fry (menghasilkan nilai <span class="math">8.7</span>).
-          </p>
-          <h4>Menghitung Jumlah Kata Sulit</h4>
-          <ul>
-            <li>Kata sulit dihitung berdasarkan kata yang memiliki <strong>6 huruf atau lebih</strong>
-              (contoh: <span class="highlight">grafik</span> atau <span class="highlight">demikian</span>).
-            </li>
-            <li>Total seluruh kata sulit dikalikan dengan <strong>angka konversi 0,6</strong>.</li>
-          </ul>
-          <p><em>Contoh Kasus:</em> <span class="math">56 &times; 0.6 = 33.6</span> kata sulit.</p>
-          <h4>Menentukan Jenjang Kelas</h4>
-          <p>Hubungkan koordinat kata sulit (<span class="math">33.6</span>) dan jumlah kalimat (<span
-              class="math">8.7</span>) pada Grafik Raygor. Hasil plot menunjukkan kecocokan untuk
-            <strong>jenjang kelas 8 SMP</strong>.
-          </p>
+
         </div>
+
+        <div class="stat-card">
+          <i class="fa-solid fa-file"></i>
+
+          <div>
+            <h3 id="totalDrafts">0</h3>
+            <p>Draft</p>
+          </div>
+
+        </div>
+
       </div>
+
+      <!-- EDITOR -->
+
+      <div class="editor-panel">
+
+        <div class="section-header">
+
+          <h2>✍️ Tulis Konten Baru</h2>
+
+          <p>
+            Buat materi, video pembelajaran,
+            atau informasi terbaru.
+          </p>
+
+        </div>
+
+        <div class="content-tabs">
+
+          <button class="content-tab active" data-type="materials">
+
+            📄 Materi
+
+          </button>
+
+          <button class="content-tab" data-type="videos">
+
+            🎥 Video
+
+          </button>
+
+          <button class="content-tab" data-type="feeds">
+
+            📢 Informasi
+
+          </button>
+
+        </div>
+
+        <input type="text" id="contentTitle" placeholder="Judul konten">
+
+        <textarea id="contentDescription" placeholder="Tulis ringkasan atau deskripsi konten">
+        </textarea>
+
+        <input type="file" id="thumbnailFile" accept="image/*">
+
+        <img id="thumbnailPreview" class="thumbnail-preview" style="display:none">
+
+        <div id="dynamicInputs">
+
+          <input type="text" id="materialLink" placeholder="Link materi">
+
+        </div>
+
+        <div class="editor-actions">
+
+          <button id="saveDraftBtn" class="draft-btn">
+
+            📝 Simpan Draft
+
+          </button>
+
+          <button id="publishBtn" class="publish-btn">
+
+            🚀 Publish
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- SEMUA KONTEN -->
+
+      <div class="content-manager">
+
+        <div class="section-header">
+
+          <h2>📚 Semua Konten</h2>
+
+          <p>
+            Kelola draft dan konten yang
+            telah dipublikasikan.
+          </p>
+
+        </div>
+
+        <div id="adminPostsList"></div>
+
+      </div>
+
     </div>
+
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>Mari Terhubungi</h2>
-    <p>
-      Terbuka untuk diskusi akademis, kolaborasi konten edukasi, dan pengembangan project kreatif bersama Kogniscio.
-    </p>
 
-    <div class="contact-buttons">
-      <a href="https://www.instagram.com/inragunawan11/" target="_blank" class="btn">
-        <i class="fa-brands fa-instagram"></i> Instagram Saya
-      </a>
-      <a href="https://www.youtube.com/@inragunawan" target="_blank" class="btn">
-        <i class="fa-brands fa-youtube"></i> Youtube Saya
-      </a>
+  <!-- PROFILE -->
+  <section id="profile" class="page profile-section">
+
+    <div class="profile-card-container">
+
+      <div class="profile-header-bg"></div>
+
+      <div class="profile-main-info">
+
+        <div class="profile-avatar-container">
+
+          <img src="assets/images/image1.jpeg" id="profileAvatar" class="large-profile-avatar">
+
+          <label for="avatarInput" class="edit-avatar-btn">
+
+            <i class="fa-solid fa-camera"></i>
+
+          </label>
+
+          <input type="file" id="avatarInput" accept="image/*" style="display:none">
+
+        </div>
+
+      </div>
+
+      <h2 id="profileName"></h2>
+
+      <span id="profileEmail"></span>
+
+      <p id="roleBadge" class="profile-role-badge">
+
+        User
+
+      </p>
+
+      <button id="logoutBtn" class="logout-btn">
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        Logout
+
+      </button>
+
     </div>
+
   </section>
+
+
+  <!-- NAVIGATION -->
 
   <nav class="bottom-nav">
+
     <button class="nav-btn active" data-page="home">
+
       <i class="fa-solid fa-house"></i>
       <span>Home</span>
+
     </button>
 
-    <button class="nav-btn" data-page="courses">
-      <i class="fa-solid fa-book"></i>
-      <span>Course</span>
+    <button class="nav-btn" data-page="explore">
+
+      <i class="fa-solid fa-book-open"></i>
+      <span>Jelajah</span>
+
     </button>
 
-    <button class="nav-btn" data-page="classroom">
+    <button class="nav-btn" data-page="videos">
+
       <i class="fa-solid fa-video"></i>
       <span>Video</span>
+
     </button>
 
-    <button class="nav-btn" data-page="contact">
+    <button class="nav-btn admin-only" data-page="create">
+
+      <i class="fa-solid fa-pen"></i>
+      <span>Editor</span>
+
+    </button>
+
+    <button class="nav-btn" data-page="profile">
+
       <i class="fa-solid fa-user"></i>
       <span>Profil</span>
+
     </button>
+
   </nav>
 
 
   <button id="darkModeToggle" class="dark-floating">
+
     <i class="fa-solid fa-moon"></i>
+
   </button>
 
+  <script type="module" src="js/script.js">
+  </script>
 
-<script type="importmap">
-  {
-    "imports": {
-      "firebase/app": "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js",
-      "firebase/auth": "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"
-    }
-  }
-</script>
-
-<script type="module" src="js/script.js"></script>
 </body>
 
 </html>
